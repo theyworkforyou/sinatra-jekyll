@@ -1,4 +1,4 @@
-# Sinatra::Jekyll [![Build Status](https://travis-ci.org/theyworkforyou/sinatra-jekyll.svg?branch=master)](https://travis-ci.org/theyworkforyou/sinatra-jekyll)
+# Sinatra::Jekyll [![Build Status](https://travis-ci.org/theyworkforyou/sinatra-jekyll.svg?branch=master)](https://travis-ci.org/theyworkforyou/sinatra-jekyll) [![Gem Version](https://badge.fury.io/rb/sinatra-jekyll.svg)](https://badge.fury.io/rb/sinatra-jekyll)
 
 Use Jekyll to render layouts in Sinatra.
 
