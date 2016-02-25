@@ -5,7 +5,7 @@ require 'sinatra/jekyll/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'sinatra-jekyll'
-  spec.version       = Sinatra::Jekyll::VERSION
+  spec.version       = Sinatra::JekyllExtension::VERSION
   spec.authors       = ['Chris Mytton']
   spec.email         = ['chrismytton@gmail.com']
 
@@ -18,8 +18,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'sinatra', '>= 1', '< 2'
+  spec.add_runtime_dependency 'jekyll', '>= 3', '< 4'
+
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'pry', '~> 0.10'
+  spec.add_development_dependency 'rack-test', '~> 0.6'
 end
