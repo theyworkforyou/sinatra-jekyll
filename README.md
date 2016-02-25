@@ -20,7 +20,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This module provides a single `render_into_jekyll_layout` method which renders the given content into a Jekyll site layout.
+
+Using this extension in classic style Sinatra apps is as simple as requiring the extension, defining `jekyll_site_path` and using the `render_into_jekyll_layout` method:
+
+```ruby
+require 'sinatra'
+require 'sinatra/jekyll'
+
+configure do
+  set :jekyll_site_path, './my_jekyll_site'
+end
+
+get '/' do
+  render_into_jekyll_layout '<p class="example">Hello world!</p>'
+end
+```
+
+Sinatra::Base subclasses need to require and register the module explicitly using the `register` method:
+
+```ruby
+require 'sinatra/base'
+require 'sinatra/jekyll'
+
+class MyApp < Sinatra::Base
+  register Sinatra::JekyllExtension
+
+  configure do
+    set :jekyll_site_path, './my_jekyll_site'
+  end
+
+  get '/' do
+    render_into_jekyll_layout '<p class="example">Hello world!</p>'
+  end
+end
+```
 
 ## Development
 
