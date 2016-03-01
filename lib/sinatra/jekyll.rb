@@ -37,7 +37,9 @@ module Sinatra
 
         process(name)
         self.content = content
-        self.data = { 'layout' => 'default' }.merge(options)
+        self.data = Jekyll::Utils.stringify_hash_keys(
+          { 'layout' => 'default' }.merge(options)
+        )
 
         data.default_proc = proc do |_, key|
           site.frontmatter_defaults.find(File.join(dir, name), type, key)
