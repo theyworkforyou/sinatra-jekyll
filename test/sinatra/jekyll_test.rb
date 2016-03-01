@@ -10,7 +10,7 @@ class MockSinatraApp < Sinatra::Base
   end
 
   get '/with_options' do
-    render_into_jekyll_layout 'Test', 'layout' => 'another', 'extra_class' => 'foo'
+    render_into_jekyll_layout 'Test', layout: 'another', extra_class: 'foo'
   end
 end
 
